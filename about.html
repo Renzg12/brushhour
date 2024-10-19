@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brush Hour</title>
+  <link rel="stylesheet" href="about.css">
+</head>
+<body>
+  <header class="header">
+    <a href="index.html" class="logo">BRUSH HOUR</a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="service.html">Services & Products</a></li>
+        <li><a href="reservation.html">Reservation</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="about" class="about-us">
+    <div class="content">
+        <h2>About Us</h2>
+        <button class="toggle">Mission</button>
+        <div class="hidden">
+            <p>To inspire creativity by providing exceptional art and design services and products. We strive to empower our clients to transform their ideas into stunning works of art, offering comprehensive tutorials in painting, drawing, sketching, digital arts, and graphic design. Our platform encourages artists and enthusiasts to share and exchange their designs, fostering a collaborative spirit where creativity thrives. In addition to our tutorials, we offer a curated selection of products, including canvases, sketchbooks, and art materials, ensuring that everyone has access to the tools they need to create. Through workshops and community events, we aim to build a vibrant network where artists can connect, learn, and grow together.</p>
+        </div>
+        <button class="toggle">Vision</button>
+        <div class="hidden">
+            <p>To be a leading hub for artistic expression and innovation, where creativity knows no bounds. We envision a world where every individual, regardless of skill level, has the opportunity to explore their artistic potential and share their unique voice. By fostering a supportive community that champions collaboration, we aim to inspire a movement of creativity that transcends traditional boundaries. Our commitment to quality education, exceptional services, and curated resources will empower artists and enthusiasts alike to not only create beautiful works of art but also to cultivate lasting connections and friendships in their artistic journey. Together, we will transform ideas into reality and nurture a thriving ecosystem of creativity that enriches lives and communities.</p>
+        </div>
+        <button class="toggle">Philosophy</button>
+        <div class="hidden">
+            <p>We believe that creativity is a fundamental part of what it means to be human, and it should be accessible to everyone. Our philosophy centers on fostering an inclusive and inspiring environment where exploration, self-expression, and the celebration of each individual’s artistic journey thrive. We are dedicated to empowering our community by providing the tools, knowledge, and support necessary for every artist—whether novice or seasoned—to unlock their full creative potential. Through collaboration and shared experiences, we aim to cultivate a vibrant culture of creativity that enriches lives and connects people across diverse backgrounds.</p>
+        </div>
+        <button class="toggle">Goals</button>
+        <div class="hidden">
+            <p>1. Empower Creativity -
+              We aim to inspire individuals to embrace their artistic potential by offering exceptional art and design services, comprehensive tutorials, and personalized guidance. Our goal is to provide resources and encouragement that enable artists of all skill levels to explore new techniques and express their unique visions confidently.<br> <br>2. Expand Product Quality -
+              We are committed to curating a selection of high-quality art materials, including canvases, sketchbooks, and tools that enhance the creative process. Our goal is to continually evaluate and improve our product offerings, ensuring that every artist has access to the best resources for their projects, fostering an environment where quality craftsmanship is celebrated.<br> <br>3. Build a Community -
+              We strive to cultivate a vibrant, inclusive community where artists and enthusiasts can connect, collaborate, and support one another. Through workshops, events, and online platforms, our goal is to create a space for meaningful exchanges, fostering relationships that inspire creativity and growth.<br> <br>4. Encourage Lifelong Learning -
+              We aim to promote a culture of continuous learning by providing a variety of educational opportunities, from tutorials to workshops. Our goal is to ensure that every individual has the chance to expand their skills and knowledge, making artistic exploration an ongoing journey.<br> <br>5. Champion Diversity - in Art
+              We believe that diverse perspectives enrich the artistic landscape. Our goal is to support and uplift underrepresented voices in the art community by showcasing a wide range of artistic styles and cultural influences, creating a more inclusive and vibrant creative ecosystem.<br> <br>6. Promote Sustainable Practices -
+              We are committed to sustainability in our operations and product offerings. Our goal is to source eco-friendly materials and practices, ensuring that our creative pursuits contribute positively to the environment and inspire others to do the same.</p>
+        </div>
+        <button class="toggle">Additional Information</button>
+        <div class="hidden">
+            <p>Additional Information
+              In addition to our core services, we provide custom design solutions tailored to meet the unique needs of each client, ensuring that every project reflects their vision and goals. Our diverse range of digital products includes downloadable resources such as templates, stock illustrations, and digital art tools that empower artists to enhance their creative workflows.</p>
+        </div>
+    </div>
+</section>
+<script>
+  document.querySelectorAll('.toggle').forEach(button => {
+      button.addEventListener('click', () => {
+          const hiddenContent = button.nextElementSibling;
+          hiddenContent.classList.toggle('hidden');
+      });
+  });
+  </script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f0f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .header {
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+  }
+
+.logo {
+    font-size: 3em;
+    text-decoration: wavy;
+    color: #000000;
+    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.768);
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  background-color: #333;
+}
+
+nav ul li {
+  padding: 15px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+#about {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.about-us h2 {
+  color: #333;
+  font-size: 2.5em;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Clickable Sections */
+.content {
+  margin: 20px 0;
+}
+
+.toggle {
+  cursor: pointer;
+  background-color: #4a90e2;
+  color: white;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+  width: 100%;
+  text-align: left;
+  transition: background-color 0.3s;
+}
+
+.toggle:hover {
+  background-color: #357ab8; /* Darker shade on hover */
+}
+
+/* Hidden Content */
+.hidden {
+  display: none;
+  margin: 10px 0;
+  padding: 15px;
+  border-left: 4px solid #4a90e2;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  .header {
+      padding: 15px 0;
+  }
+
+  #about {
+      padding: 20px;
+  }
+
+  .about-us h2 {
+      font-size: 2em;
+  }
+}
+
+nav ul li a:hover {
+  color: #ffeb3b;
+}

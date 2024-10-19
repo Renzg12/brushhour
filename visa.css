@@ -1,0 +1,91 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f0f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .header {
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+  }
+
+.logo {
+    font-size: 3em;
+    text-decoration: wavy;
+    color: #000000;
+    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.768);
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  background-color: #333;
+}
+
+nav ul li {
+  padding: 15px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+.gallery {
+    padding: 40px;
+    text-align: center;
+}
+
+.gallery h2 {
+    color: #ff6a00;
+    margin-bottom: 20px;
+}
+
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gallery-item {
+    background: #fff;
+    border-radius: 10px;
+    margin: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s;
+    width: 200px;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    border-bottom: 2px solid #ff6a00;
+}
+
+.gallery-item h3 {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #333;
+}
+
+.price {
+    font-size: 1.1em;
+    color: #ff6a00;
+    margin-bottom: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #333;
+    color: #fff;
+}

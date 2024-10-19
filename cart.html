@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Cart</title>
+  <link rel="stylesheet" href="cart.css">
+  <script>
+    let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+    function renderCart() {
+      const cartContainer = document.getElementById('cart-items');
+      cartContainer.innerHTML = ''; // Clear existing items
+
+      let totalAmount = 0;
+
+      cartItems.forEach((item, index) => {
+        const itemTotal = item.price * item.quantity;
+        totalAmount += itemTotal;
+        const itemRow = `
+          <div class="cart-item">
+            <span>${item.name}</span>
+            <span>$${item.price}</span>
+            <span>Quantity: ${item.quantity}</span>
+            <span>Total: $${itemTotal}</span>
+            <button onclick="removeFromCart(${index})">Remove</button>
+          </div>
+        `;
+        cartContainer.innerHTML += itemRow;
+      });
+
+      document.getElementById('total-amount').innerText = `Total Amount: $${totalAmount}`;
+    }
+
+    function removeFromCart(index) {
+      cartItems.splice(index, 1);
+      localStorage.setItem('cartItems', JSON.stringify(cartItems));
+      renderCart();
+    }
+
+    function checkout() {
+      const paymentMethod = document.querySelector('input[name="payment-method"]:checked');
+      if (!paymentMethod) {
+        alert('Please select a payment method.');
+        return;
+      }
+
+      alert(`Proceeding to payment with ${paymentMethod.value}`);
+      localStorage.removeItem('cartItems'); // Clear cart after checkout
+      renderReceipt();
+    }
+
+    function renderReceipt() {
+      const receiptContainer = document.getElementById('receipt');
+      receiptContainer.innerHTML = `<h2>Receipt</h2><p>Thank you for your purchase!</p>`;
+      cartItems.forEach(item => {
+        receiptContainer.innerHTML += `<p>${item.name} - $${item.price} x ${item.quantity}</p>`;
+      });
+      const totalAmount = cartItems.reduce((total, item) => total + (item.price * item.quantity), 0);
+      receiptContainer.innerHTML += `<p>Total Amount: $${totalAmount}</p>`;
+      receiptContainer.style.display = 'block';
+    }
+
+    window.onload = renderCart;
+  </script>
+</head>
+<body>
+  <header class="header">
+    <a href="index.html" class="logo">BRUSH HOUR</a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="service.html">Services & Products</a></li>
+        <li><a href="reservation.html">Reservation</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="cart">
+      <h2>Your Orders</h2>
+      <div id="cart-items"></div>
+      <div id="total-amount"></div>
+
+      <h3>Select Payment Method:</h3>
+      <div>
+        <label><input type="radio" name="payment-method" value="Credit Card"> Credit Card</label>
+        <label><input type="radio" name="payment-method" value="PayPal"> PayPal</label>
+      </div>
+      <button onclick="checkout()">Checkout</button>
+
+      <div id="receipt" style="display:none;"></div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2024 Brush Hour. All rights reserved.</p>
+  </footer>
+</body>
+</html>

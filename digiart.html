@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brush Hour</title>
+  <link rel="stylesheet" href="sket.css">
+  <script>
+    function addToCart(productName, productPrice) {
+      const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+      const existingItem = cartItems.find(item => item.name === productName);
+      if (existingItem) {
+        existingItem.quantity++;
+      } else {
+        cartItems.push({ name: productName, price: productPrice, quantity: 1 });
+      }
+      localStorage.setItem('cartItems', JSON.stringify(cartItems));
+      alert(`${productName} has been added to your cart.`);
+    }
+  </script>
+</head>
+<body>
+  <header class="header">
+    <a href="index.html" class="logo">BRUSH HOUR</a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="service.html">Services & Products</a></li>
+        <li><a href="reservation.html">Reservation</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="gallery">
+      <h2>Digital Arts</h2>
+      <div class="gallery-container">
+        <div class="gallery-item">
+          <img src="dga1.jpg" alt="Sunset Over Ocean">
+          <h3>Sunset Over Ocean</h3>
+          <p class="description">A breathtaking digital painting capturing the beauty of nature.</p>
+          <p class="price">$150</p>
+          <button onclick="addToCart('Sunset Over Ocean', 150)">Add to Cart</button>
+        </div>
+        <div class="gallery-item">
+          <img src="dga2.jpg" alt="Abstract Waves">
+          <h3>Abstract Waves</h3>
+          <p class="description">An abstract piece that brings energy and movement to any space.</p>
+          <p class="price">$120</p>
+          <button onclick="addToCart('Abstract Waves', 120)">Add to Cart</button>
+        </div>
+        <div class="gallery-item">
+          <img src="dga3.jpg" alt="Cityscape Dream">
+          <h3>Cityscape Dream</h3>
+          <p class="description">A stunning city skyline illustration at night, perfect for urban lovers.</p>
+          <p class="price">$200</p>
+          <button onclick="addToCart('Cityscape Dream', 200)">Add to Cart</button>
+        </div>
+        <div class="gallery-item">
+          <img src="dga4.jpg" alt="Floral Fantasy">
+          <h3>Floral Fantasy</h3>
+          <p class="description">A vibrant floral design that adds a touch of elegance to any room.</p>
+          <p class="price">$100</p>
+          <button onclick="addToCart('Floral Fantasy', 100)">Add to Cart</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Brush Hour. All rights reserved.</p>
+  </footer>
+</body>
+</html>

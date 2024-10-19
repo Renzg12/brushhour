@@ -1,0 +1,90 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f0f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+  }
+.logo {
+    font-size: 3em;
+    text-decoration: wavy;
+    color: #000000;
+    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.768);
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(63, 63, 63);
+  }
+  
+  nav ul li {
+    padding: 15px;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  nav ul li a:hover {
+    color: #ffeb3b;
+}
+.contact-info {
+  background-color: #060303;
+  border-radius: 10px;
+  padding: 30px;
+  max-width: 600px;
+  margin: 30px auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.contact-info h2 {
+  color: #ff6a00;
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  font-size: 1.1em;
+  margin: 10px 0;
+}
+
+.social-media {
+  margin-top: 20px;
+}
+
+.social-media a {
+  color: #ff6a00;
+  font-size: 2em;
+  margin: 0 15px;
+  transition: transform 0.3s;
+}
+
+.social-media a:hover {
+  transform: scale(1.2);
+  color: #ee0979;
+}
+
+/* Media queries */
+@media (max-width: 600px) {
+  .header {
+      padding: 20px 0;
+  }
+  
+  .contact-info {
+      padding: 20px;
+  }
+
+  .social-media a {
+      margin: 0 10px;
+      font-size: 1.5em;
+  }
+}

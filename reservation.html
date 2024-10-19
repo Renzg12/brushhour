@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brush Hour</title>
+  <link rel="stylesheet" href="reservation.css">
+</head>
+<body>
+  <header class="header">
+    <a href="index.html" class="logo">BRUSH HOUR</a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="service.html">Services & Products</a></li>
+        <li><a href="reservation.html">Reservation</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+    <section id="reservation" class="reservation-form">
+      <div class="content">
+        <h2>Make a Reservation</h2>
+        <form action="/submit_reservation" method="POST">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+          
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+          
+          <label for="contact">Contact Number:</label>
+          <input type="tel" id="contact" name="contact" required>
+          
+          <label for="address">Address:</label>
+          <textarea id="address" name="address" rows="4" required></textarea>
+          
+          <label for="service">Select Service:</label>
+          <select id="service" name="service" required>
+            <option value="illustration">Custom Illustration</option>
+            <option value="graphic-design">Graphic Design</option>
+            <option value="logo-design">Fine Arts</option>
+            <option value="digital-painting">Workshops and Tutorials</option>
+            <option value="digital-painting">Consultation Services</option>
+          </select>
+          
+          <label for="date">Preferred Date:</label>
+          <input type="date" id="date" name="date" required>
+          
+          <input type="submit" value="Reserve">
+        </form>
+      </div>
+    </section>
+  </header>
+</body>
+</html>

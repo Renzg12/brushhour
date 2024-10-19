@@ -1,0 +1,99 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f0f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+  }
+.logo {
+    font-size: 3em;
+    text-decoration: wavy;
+    color: #000000;
+    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.768);
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(63, 63, 63);
+  }
+  
+  nav ul li {
+    padding: 15px;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  nav ul li a:hover {
+    color: #ffeb3b;
+}
+
+#services-products {
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+.category {
+    display: inline-block;
+    width: calc(25% - 40px);
+    margin: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s;
+    position: relative;
+}
+
+.category-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.category-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s;
+}
+
+.category-title {
+    font-size: 1.5em;
+    margin: 10px 0;
+    color: #ff6a00;
+    text-align: center;
+}
+
+.category-content {
+    padding: 10px;
+    background-color: #fff;
+}
+
+.category:hover {
+    transform: scale(1.05);
+}
+
+.category:hover .category-image {
+    transform: scale(1.1);
+}
+
+@media (max-width: 800px) {
+    .category {
+        width: calc(50% - 40px);
+    }
+}
+
+@media (max-width: 500px) {
+    .category {
+        width: calc(100% - 40px);
+    }
+}

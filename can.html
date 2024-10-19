@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brush Hour</title>
+  <link rel="stylesheet" href="sket.css">
+  <script>
+    function addToCart(productName, productPrice) {
+      const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+      const existingItem = cartItems.find(item => item.name === productName);
+      if (existingItem) {
+        existingItem.quantity++;
+      } else {
+        cartItems.push({ name: productName, price: productPrice, quantity: 1 });
+      }
+      localStorage.setItem('cartItems', JSON.stringify(cartItems));
+      alert(`${productName} has been added to your cart.`);
+    }
+  </script>
+</head>
+<body>
+  <header class="header">
+    <a href="index.html" class="logo">BRUSH HOUR</a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="service.html">Services & Products</a></li>
+        <li><a href="reservation.html">Reservation</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="gallery">
+      <h2>Digital Arts</h2>
+      <div class="gallery-container">
+        <div class="gallery-item">
+          <img src="can1.jpg" alt="Starry Night">
+          <h3>Starry Night</h3>
+          <p class="description">A stunning reproduction of the classic masterpiece.</p>
+          <p class="price">$200</p>
+          <button onclick="addToCart('Starry Night', 200)">Add to Cart</button>
+        </div>
+        <div class="gallery-item">
+          <img src="can2.jpg" alt="Abstract Dream">
+          <h3>Abstract Dream</h3>
+          <p class="description">A vibrant abstract piece that inspires creativity.</p>
+          <p class="price">$180</p>
+          <button onclick="addToCart('Abstract Dream', 180)">Add to Cart</button>
+        </div>
+        <div class="gallery-item">
+          <img src="can3.jpg" alt="Nature's Serenity">
+          <h3>Nature's Serenity</h3>
+          <p class="description">A tranquil landscape that brings peace to your home.</p>
+          <p class="price">$220</p>
+          <button onclick="addToCart('Nature's Serenity', 220)">Add to Cart</button>
+        </div>
+        <div class="gallery-item">
+          <img src="can4.jpg" alt="Colorful Horizon">
+          <h3>Colorful Horizon</h3>
+          <p class="description">A breathtaking view of the horizon at sunset.</p>
+          <p class="price">$200</p>
+          <button onclick="addToCart('Colorful Horizon', 200)">Add to Cart</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Brush Hour. All rights reserved.</p>
+  </footer>
+</body>
+</html>

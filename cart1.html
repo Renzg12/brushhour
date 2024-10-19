@@ -1,0 +1,19 @@
+<section id="payment-options" style="display:none;">
+    <h2>Select Payment Method</h2>
+    <div>
+      <button onclick="processPayment('Credit Card')">Credit Card</button>
+      <button onclick="processPayment('PayPal')">PayPal</button>
+    </div>
+  </section>
+  
+  <script>
+    function checkout() {
+      document.getElementById('payment-options').style.display = 'block';
+    }
+  
+    function processPayment(method) {
+      alert(`Processing payment via ${method}.`);
+      // Here, you would implement actual payment processing logic
+    }
+  </script>
+  

@@ -1,0 +1,59 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f0f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .header {
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+  }
+
+.logo {
+    font-size: 3em;
+    text-decoration: wavy;
+    color: #000000;
+    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.768);
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  background-color: #333;
+}
+
+nav ul li {
+  padding: 15px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+.tutorials-workshops {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    margin: 20px;
+}
+
+.tutorials-workshops h2 {
+    color: #ff6a00;
+    text-align: center;
+}
+
+.workshop {
+    margin-bottom: 15px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.workshop h3 {
+    color: #333;
+}

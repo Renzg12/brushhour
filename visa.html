@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brush Hour</title>
+  <link rel="stylesheet" href="visa.css">
+  <script>
+    function addToCart(productName, productPrice) {
+      const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+      const existingItem = cartItems.find(item => item.name === productName);
+      if (existingItem) {
+        existingItem.quantity++;
+      } else {
+        cartItems.push({ name: productName, price: productPrice, quantity: 1 });
+      }
+      localStorage.setItem('cartItems', JSON.stringify(cartItems));
+      alert(`${productName} has been added to your cart.`);
+    }
+  </script>
+</head>
+<body>
+  <header class="header">
+    <a href="index.html" class="logo">BRUSH HOUR</a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="service.html">Services & Products</a></li>
+        <li><a href="reservation.html">Reservation</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="gallery">
+      <h2>Our Product Gallery</h2>
+      <div class="gallery-container">
+        <div class="gallery-item">
+          <img src="vis1.jpg" alt="Painted Face">
+          <h3>Painted Face</h3>
+          <p class="price">$50</p>
+          <button onclick="addToCart('Painted Face', 50)">Add to Cart</button>
+        </div>
+        <div class="gallery-item">
+          <img src="vis2.jpg" alt="Abstract Lady">
+          <h3>Abstract Lady</h3>
+          <p class="price">$30</p>
+          <button onclick="addToCart('Abstract Lady', 30)">Add to Cart</button>
+        </div>
+        <div class="gallery-item">
+          <img src="vis3.jpg" alt="Koi Circu Motion">
+          <h3>Koi Circu Motion</h3>
+          <p class="price">$75</p>
+          <button onclick="addToCart('Koi Circru Motion', 75)">Add to Cart</button>
+        </div>
+        <div class="gallery-item">
+          <img src="vis4.jpg" alt="Young Page">
+          <h3>Young Page</h3>
+          <p class="price">$120</p>
+          <button onclick="addToCart('Young Page', 120)">Add to Cart</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Brush Hour. All rights reserved.</p>
+  </footer>
+</body>
+</html>

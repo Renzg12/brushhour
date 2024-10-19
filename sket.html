@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brush Hour</title>
+  <link rel="stylesheet" href="sket.css">
+  <script>
+    function addToCart(productName, productPrice) {
+      const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+      const existingItem = cartItems.find(item => item.name === productName);
+      if (existingItem) {
+        existingItem.quantity++;
+      } else {
+        cartItems.push({ name: productName, price: productPrice, quantity: 1 });
+      }
+      localStorage.setItem('cartItems', JSON.stringify(cartItems));
+      alert(`${productName} has been added to your cart.`);
+    }
+  </script>
+</head>
+<body>
+  <header class="header">
+    <a href="index.html" class="logo">BRUSH HOUR</a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="service.html">Services & Products</a></li>
+        <li><a href="reservation.html">Reservation</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="gallery">
+      <h2>Canvas Gallery</h2>
+      <div class="gallery-container">
+        <div class="gallery-item">
+          <img src="sket1.jpg" alt="Dreamy Landscape">
+          <h3>Dreamy Landscape</h3>
+          <p class="description">A stunning landscape illustration that brings tranquility and beauty.</p>
+          <p class="price">$80</p>
+          <button onclick="addToCart('Dreamy Landscape', 80)">Add to Cart</button>
+        </div>
+        <div class="gallery-item">
+          <img src="sket2.jpg" alt="Modern Abstract">
+          <h3>Modern Abstract</h3>
+          <p class="description">An eye-catching abstract piece that adds a modern touch to any space.</p>
+          <p class="price">$100</p>
+          <button onclick="addToCart('Modern Abstract', 100)">Add to Cart</button>
+        </div>
+        <div class="gallery-item">
+          <img src="sket3.jpg" alt="Whimsical Character">
+          <h3>Whimsical Character</h3>
+          <p class="description">Fun and vibrant characters that tell a story through art.</p>
+          <p class="price">$75</p>
+          <button onclick="addToCart('Whimsical Character', 70)">Add to Cart</button>
+        </div>
+        <div class="gallery-item">
+          <img src="sket4.jpg" alt="Floral Fantasy">
+          <h3>Floral Fantasy</h3>
+          <p class="description">A beautiful floral design that adds a touch of nature to your decor.</p>
+          <p class="price">$90</p>
+          <button onclick="addToCart('Floral Fantasy', 90)">Add to Cart</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Brush Hour. All rights reserved.</p>
+  </footer>
+</body>
+</html>
